@@ -1,4 +1,38 @@
-:root {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
+}
+
+html {
+  line-height: 1.5rem;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: #102261;
+}
+.mainTitle {
+  margin-bottom: 3.125rem;
+}
+
+.description {
+  margin-bottom: 2.6875rem;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.description {
+  max-width: 34.8125rem;
+}
+
+.hero {
+  height: 10rem;
 }
