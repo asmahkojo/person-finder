@@ -1,0 +1,18 @@
+:root {
+  --clr-primary-300: hsl(213, 72%, 77%);
+  --clr-primary-700: hsl(227, 72%, 22%);
+
+  --clr-neutral-200: hsl(0, 0%, 94%);
+  --clr-neutral-300: hsl(0, 0%, 86%);
+  --clr-neutral-400: hsl(0, 0%, 77%);
+  --clr-neutral-410: hsl(0, 0%, 76%);
+  --clr-neutral-500: hsl(0, 0%, 50%);
+  --clr-neutral-600: hsl(0, 0%, 40%);
+  --clr-neutral-900: hsl(0, 0%, 20%);
+
+  --ff-primary: Helvetica, sans-serif;
+
+  --fs-400: 0.875rem;
+  --fs-500: 1rem;
+  --fs-900: 2.5rem;
+}

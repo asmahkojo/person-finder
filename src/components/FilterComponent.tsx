@@ -16,10 +16,13 @@ const PersistentSearchBarContainer = styled.div`
   margin-bottom: 2.6875rem;
 `;
 
-const ResultsContainer = styled.div`
+const ResultsContainer = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+
+  & article + article {
+    margin-top: 1.5rem;
+  }
 `;
 
 export function FilterComponent() {

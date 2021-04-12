@@ -1,0 +1,51 @@
+@import 'reset.css';
+@import 'root.css';
+
+body {
+  color: var(--clr-neutral-900);
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-500);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: var(--clr-primary-700);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: var(--fs-900);
+  font-weight: 400;
+  line-height: 2.75rem;
+}
+
+.mainTitle {
+  margin-bottom: 3.125rem;
+}
+
+.description {
+  max-width: 34.8125rem;
+  margin-bottom: 2.6875rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.header {
+  height: 10rem;
+}
+
+.logo {
+  margin-top: 0.973125rem;
+}
+
+@media (min-width: 68.375rem) {
+  .logo {
+    margin-left: 8.3125rem;
+  }
+}

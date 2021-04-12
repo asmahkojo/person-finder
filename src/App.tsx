@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
+import './globalStyles/main.css';
 import { FilterComponent } from './components/FilterComponent';
+import { ReactComponent as Logo } from './svgs/logo.svg';
 
 function App() {
   return (
     <div className="App container">
-      <header className="hero"></header>
+      <header className="header">
+        <Logo className="logo" />
+      </header>
       <main>
         <article>
           <h1 className="mainTitle">The Person Finder</h1>

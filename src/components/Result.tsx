@@ -1,31 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ResultWrapper = styled.section`
+const ResultWrapper = styled.article`
   display: flex;
-  gap: 1.5rem;
   min-height: 6rem;
   max-width: 35.9375rem;
 `;
-const Avatar = styled.img`
-  flex: 1 1 5.989375rem;
+const Avatar = styled.div`
+  flex: 0 1 3rem;
   min-height: 6rem;
-  background: #c4c4c4;
+  margin-right: 1.5rem;
+
+  @media (min-width: 31.25rem) {
+    & {
+      flex: 0 1 5.989375rem;
+    }
+  }
 `;
 
 const ResultInfo = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-  flex: 1 1 28.450625rem;
+  flex: 1 1 0;
 `;
 
 const ResultTitle = styled.header`
+  margin-bottom: 0.5rem;
   font-weight: 700;
 `;
 
 const ResultDescription = styled.p`
-  color: #666;
+  line-height: 1.3125rem;
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-600);
 `;
 
 interface ResultProps {
@@ -37,7 +42,9 @@ interface ResultProps {
 export function Result({ name, avatar, description }: ResultProps) {
   return (
     <ResultWrapper>
-      <Avatar alt="Avatar" src={avatar} />
+      <Avatar>
+        <img alt={`${name}'s avatar`} src={avatar} />
+      </Avatar>
       <ResultInfo>
         <ResultTitle>{name}</ResultTitle>
         <ResultDescription>{description}</ResultDescription>
