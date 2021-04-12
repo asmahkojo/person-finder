@@ -13,6 +13,7 @@ main {
   display: flex;
   justify-content: center;
 }
+
 h1 {
   color: var(--clr-primary-700);
   font-family: Georgia, 'Times New Roman', Times, serif;

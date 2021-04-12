@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Magnifying } from '../../svgs/magnifying.svg';
 import { ReactComponent as Close } from '../../svgs/close.svg';
+import debounce from 'lodash.debounce';
 
 const PersistentSearchBarWrapper = styled.div`
   align-items: center;
@@ -82,8 +83,22 @@ const CloseIcon = styled(Close)`
   }
 `;
 
-export function PersistentSearchBar() {
+interface PersistentSearchBarProps {
+  onExecuteSearch: (searchValue: string) => void;
+}
+
+export function PersistentSearchBar({
+  onExecuteSearch
+}: PersistentSearchBarProps) {
   const [searchValue, setSearchValue] = useState<string>('');
+  const debouncedExecuteSearch = useRef<(searchValue: string) => void>(
+    debounce(onExecuteSearch, 300)
+  );
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+    debouncedExecuteSearch.current(event.target.value);
+  };
 
   return (
     <PersistentSearchBarWrapper>
@@ -92,15 +107,17 @@ export function PersistentSearchBar() {
         <SearchInput
           type="text"
           value={searchValue}
-          onChange={(event) => setSearchValue(event.target.value)}
+          onChange={handleOnChange}
           placeholder="Search in Air HQ"
         />
       </SearchInputContainer>
       {searchValue && (
         <CloseButtonContainer>
           <CloseButton
+            aria-label="Clear Search Text"
             onClick={() => {
               setSearchValue('');
+              debouncedExecuteSearch.current('');
             }}
           >
             <CloseIcon />
