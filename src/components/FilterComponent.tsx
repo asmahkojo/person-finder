@@ -14,6 +14,8 @@ interface PersonData {
 
 const PersistentSearchBarContainer = styled.div`
   margin-bottom: 2.6875rem;
+  position: sticky;
+  top: 0;
 `;
 
 const ResultsContainer = styled.section`
