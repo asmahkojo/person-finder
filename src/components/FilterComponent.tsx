@@ -75,7 +75,6 @@ export function FilterComponent() {
         isLoadingNextPage.current = true;
 
         return new Promise((resolve, reject) => {
-          // setTimeout(() => {
           try {
             const updatedLoadedListData = [
               ...loadedListData,
@@ -88,7 +87,6 @@ export function FilterComponent() {
             isLoadingNextPage.current = false;
             reject(error);
           }
-          // }, 2500);
         });
       };
 
