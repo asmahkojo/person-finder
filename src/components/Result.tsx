@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 const ResultWrapper = styled.article`
@@ -33,15 +33,20 @@ const ResultDescription = styled.p`
   color: var(--clr-neutral-600);
 `;
 
-interface ResultProps {
+interface ResultProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
   avatar: string;
   description: string;
 }
 
-export function Result({ name, avatar, description }: ResultProps) {
+export function Result({
+  name,
+  avatar,
+  description,
+  ...otherProps
+}: ResultProps) {
   return (
-    <ResultWrapper>
+    <ResultWrapper {...otherProps}>
       <Avatar>
         <img alt={`${name}'s avatar`} src={avatar} />
       </Avatar>
